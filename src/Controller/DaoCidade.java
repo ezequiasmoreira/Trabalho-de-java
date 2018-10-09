@@ -13,7 +13,7 @@ public class DaoCidade extends Dao{
                 cidade.getSigla().name()));
     }
     public int updateCidade(Cidade cidade) throws SQLException{
-        return (super.executeUpdate("UPDATE ciddae SET nome=? WHERE id=?", 
+        return (super.executeUpdate("UPDATE cidade SET nome=? WHERE id=?", 
                 cidade.getNome(),
                 cidade.getId()));
     }    
@@ -43,7 +43,7 @@ public class DaoCidade extends Dao{
         return lista;        
     }
     private Cidade populateObject(ResultSet rs) throws SQLException{
-        return (new Cidade(rs.getInt("id"), rs.getString("nome")));
+        //return (new Cidade(rs.getInt("id"), rs.getString("nome")));
     }
     
     
