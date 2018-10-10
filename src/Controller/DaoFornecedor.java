@@ -8,22 +8,24 @@ import java.util.List;
 
 public class DaoFornecedor extends Dao{
     public int addFornecedor(Fornecedor fornecedor) throws SQLException{
-        return (super.executeUpdate("INSERT INTO fornecedor(nome,cnpj,bairro,endereco,id_cidade,status) VALUES (?,?,?,?,?,?)", 
-                fornecedor.getNome(),
-                fornecedor.getCnpj(),
-                fornecedor.getBairro(),
-                fornecedor.getEndereco(),                
-                fornecedor.getCidade().getId(),
-                fornecedor.getStatus()));
-    }
-    public int updateFornecedor(Fornecedor fornecedor) throws SQLException{
-        return (super.executeUpdate("UPDATE fornecedor SET nome = ?,SET cnpj = ?,SET bairro = ?,SET endereco = ?,SET id_cidade = ?,SET status = ? WHERE id=?", 
+        return (super.executeUpdate("INSERT INTO fornecedor(nome,cnpj,bairro,endereco,id_cidade,status,tipo_pessoa) VALUES (?,?,?,?,?,?,?)", 
                 fornecedor.getNome(),
                 fornecedor.getCnpj(),
                 fornecedor.getBairro(),
                 fornecedor.getEndereco(),                
                 fornecedor.getCidade().getId(),
                 fornecedor.getStatus(),
+                fornecedor.getPessoa().name()));
+    }
+    public int updateFornecedor(Fornecedor fornecedor) throws SQLException{
+        return (super.executeUpdate("UPDATE fornecedor SET nome = ?,SET cnpj = ?,SET bairro = ?,SET endereco = ?,SET id_cidade = ?,SET status = ?,,SET tipo_pessoa = ?  WHERE id=? ", 
+                fornecedor.getNome(),
+                fornecedor.getCnpj(),
+                fornecedor.getBairro(),
+                fornecedor.getEndereco(),                
+                fornecedor.getCidade().getId(),
+                fornecedor.getStatus(),
+                fornecedor.getPessoa().name(),
                 fornecedor.getId()));
     }    
     public int deleteFornecedor(Fornecedor fornecedor) throws SQLException{
