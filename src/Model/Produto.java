@@ -15,7 +15,7 @@ public class Produto extends Padrao{
     public Produto(){
         super();
     }
-    public Produto(int id, String nome,Date dataValidade,double precoCusto,double precoVenda, TipoSexo sexo,Fornecedor id_fornecedor,char status){
+    public Produto(int id, String nome,Date dataValidade,double precoCusto,double precoVenda,Fornecedor id_fornecedor,char status){
         super(id, nome);
         this.setDataValidade(dataValidade);
         this.setPrecoCusto(precoCusto);

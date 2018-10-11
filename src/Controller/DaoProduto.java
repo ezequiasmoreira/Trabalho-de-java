@@ -52,7 +52,10 @@ public class DaoProduto extends Dao{
         return lista;        
     }
     private Produto populateObject(ResultSet rs) throws SQLException{
-        //return (new Produto(rs.getInt("id"), rs.getString("nome")));
+        DaoFornecedor fornecedor = new DaoFornecedor();
+        return (new Produto(rs.getInt("id"), rs.getString("nome"),rs.getDate("dataValidade"), rs.getDouble("precoCusto"),rs.getDouble("precoVenda"),
+                fornecedor.getFornecedor(rs.getInt("id_fornecedor")),
+        rs.getString('h')));
     }
     
     

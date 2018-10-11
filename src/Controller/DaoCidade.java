@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.Cidade;
+import Tipos.TipoSigla;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.LinkedList;
@@ -43,7 +44,7 @@ public class DaoCidade extends Dao{
         return lista;        
     }
     private Cidade populateObject(ResultSet rs) throws SQLException{
-        //return (new Cidade(rs.getInt("id"), rs.getString("nome")));
+        return (new Cidade(rs.getInt("id"), rs.getString("nome"),TipoSigla.valueOf("sigla")));
     }
     
     
